@@ -3,7 +3,7 @@
 <table>
   <tr>
     <th>Name</th>
-    <th></th>
+    <th>Players</th>
     <th></th>
     <th></th>
   </tr>
@@ -11,6 +11,10 @@
 <% @teams.each do |team| %>
   <tr>
     <td><%= team.name %></td>
+		<td><% team.players.each do |x| %>
+			<%= x.name  %><br />
+		<% end %>
+		</td>
     <td><%= link_to 'Show', team %></td>
     <td><%= link_to 'Edit', edit_team_path(team) %></td>
     <td><%= link_to 'Destroy', team, confirm: 'Are you sure?', method: :delete %></td>
