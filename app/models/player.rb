@@ -1,5 +1,7 @@
 class Player < ActiveRecord::Base
-  attr_accessible :name, :team_id
+  attr_accessible :name, :player_id, :team_id
   
   belongs_to :team
+
+
 end
