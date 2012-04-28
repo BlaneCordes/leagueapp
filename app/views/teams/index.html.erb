@@ -4,7 +4,7 @@
   <tr>
     <th>Name</th>
     <th>Players</th>
-    <th>Players</th>
+    <th>Home Wins</th>
     <th></th>
   </tr>
 
@@ -13,6 +13,10 @@
     <td><%= team.name %></td>
 		<td><% team.players.each do |x| %>
 			<%= x.name  %><br />
+		<% end %>
+		</td>
+			<% Game.all.each do |game| %>
+		<td><%= game.home_wins(game) %>
 		<% end %>
 		</td>
     <td><%= link_to 'Show', team %></td>
