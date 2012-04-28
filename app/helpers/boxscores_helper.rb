@@ -1,0 +1,2 @@
+module BoxscoresHelper
+end

@@ -11,7 +11,24 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120420194404) do
+ActiveRecord::Schema.define(:version => 20120428155800) do
+
+  create_table "boxscores", :force => true do |t|
+    t.integer  "game_id"
+    t.integer  "player_id"
+    t.decimal  "points"
+    t.decimal  "rebounds"
+    t.decimal  "assists"
+    t.decimal  "blocks"
+    t.decimal  "steals"
+    t.decimal  "turnovers"
+    t.decimal  "fgattempted"
+    t.decimal  "fgmade"
+    t.decimal  "threepointattempted"
+    t.decimal  "threepointmade"
+    t.datetime "created_at",          :null => false
+    t.datetime "updated_at",          :null => false
+  end
 
   create_table "games", :force => true do |t|
     t.integer  "home_team_id"

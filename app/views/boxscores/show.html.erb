@@ -1,0 +1,65 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Game:</b>
+  <%= @boxscore.game_id %>
+</p>
+
+<p>
+  <b>Player:</b>
+  <%= @boxscore.player_id %>
+</p>
+
+<p>
+  <b>Points:</b>
+  <%= @boxscore.points %>
+</p>
+
+<p>
+  <b>Rebounds:</b>
+  <%= @boxscore.rebounds %>
+</p>
+
+<p>
+  <b>Assists:</b>
+  <%= @boxscore.assists %>
+</p>
+
+<p>
+  <b>Blocks:</b>
+  <%= @boxscore.blocks %>
+</p>
+
+<p>
+  <b>Steals:</b>
+  <%= @boxscore.steals %>
+</p>
+
+<p>
+  <b>Turnovers:</b>
+  <%= @boxscore.turnovers %>
+</p>
+
+<p>
+  <b>Fgattempted:</b>
+  <%= @boxscore.fgattempted %>
+</p>
+
+<p>
+  <b>Fgmade:</b>
+  <%= @boxscore.fgmade %>
+</p>
+
+<p>
+  <b>Threepointattempted:</b>
+  <%= @boxscore.threepointattempted %>
+</p>
+
+<p>
+  <b>Threepointmade:</b>
+  <%= @boxscore.threepointmade %>
+</p>
+
+
+<%= link_to 'Edit', edit_boxscore_path(@boxscore) %> |
+<%= link_to 'Back', boxscores_path %>

@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  game_id: 1
+  player_id: 1
+  points: 9.99
+  rebounds: 9.99
+  assists: 9.99
+  blocks: 9.99
+  steals: 9.99
+  turnovers: 9.99
+  fgattempted: 9.99
+  fgmade: 9.99
+  threepointattempted: 9.99
+  threepointmade: 9.99
+
+two:
+  game_id: 1
+  player_id: 1
+  points: 9.99
+  rebounds: 9.99
+  assists: 9.99
+  blocks: 9.99
+  steals: 9.99
+  turnovers: 9.99
+  fgattempted: 9.99
+  fgmade: 9.99
+  threepointattempted: 9.99
+  threepointmade: 9.99

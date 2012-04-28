@@ -1,0 +1,45 @@
+<h1>Listing boxscores</h1>
+
+<table>
+  <tr>
+    <th>Game</th>
+    <th>Player</th>
+    <th>Points</th>
+    <th>Rebounds</th>
+    <th>Assists</th>
+    <th>Blocks</th>
+    <th>Steals</th>
+    <th>Turnovers</th>
+    <th>Fgattempted</th>
+    <th>Fgmade</th>
+    <th>Threepointattempted</th>
+    <th>Threepointmade</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @boxscores.each do |boxscore| %>
+  <tr>
+    <td><%= boxscore.game_id %></td>
+    <td><%= boxscore.player_id %></td>
+    <td><%= boxscore.points %></td>
+    <td><%= boxscore.rebounds %></td>
+    <td><%= boxscore.assists %></td>
+    <td><%= boxscore.blocks %></td>
+    <td><%= boxscore.steals %></td>
+    <td><%= boxscore.turnovers %></td>
+    <td><%= boxscore.fgattempted %></td>
+    <td><%= boxscore.fgmade %></td>
+    <td><%= boxscore.threepointattempted %></td>
+    <td><%= boxscore.threepointmade %></td>
+    <td><%= link_to 'Show', boxscore %></td>
+    <td><%= link_to 'Edit', edit_boxscore_path(boxscore) %></td>
+    <td><%= link_to 'Destroy', boxscore, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Boxscore', new_boxscore_path %>

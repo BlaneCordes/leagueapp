@@ -1,0 +1,65 @@
+<%= form_for(@boxscore) do |f| %>
+  <% if @boxscore.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@boxscore.errors.count, "error") %> prohibited this boxscore from being saved:</h2>
+
+      <ul>
+      <% @boxscore.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :game_id %><br />
+    <%= f.number_field :game_id %>
+  </div>
+  <div class="field">
+    <%= f.label :player_id %><br />
+    <%= f.number_field :player_id %>
+  </div>
+  <div class="field">
+    <%= f.label :points %><br />
+    <%= f.text_field :points %>
+  </div>
+  <div class="field">
+    <%= f.label :rebounds %><br />
+    <%= f.text_field :rebounds %>
+  </div>
+  <div class="field">
+    <%= f.label :assists %><br />
+    <%= f.text_field :assists %>
+  </div>
+  <div class="field">
+    <%= f.label :blocks %><br />
+    <%= f.text_field :blocks %>
+  </div>
+  <div class="field">
+    <%= f.label :steals %><br />
+    <%= f.text_field :steals %>
+  </div>
+  <div class="field">
+    <%= f.label :turnovers %><br />
+    <%= f.text_field :turnovers %>
+  </div>
+  <div class="field">
+    <%= f.label :fgattempted %><br />
+    <%= f.text_field :fgattempted %>
+  </div>
+  <div class="field">
+    <%= f.label :fgmade %><br />
+    <%= f.text_field :fgmade %>
+  </div>
+  <div class="field">
+    <%= f.label :threepointattempted %><br />
+    <%= f.text_field :threepointattempted %>
+  </div>
+  <div class="field">
+    <%= f.label :threepointmade %><br />
+    <%= f.text_field :threepointmade %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
