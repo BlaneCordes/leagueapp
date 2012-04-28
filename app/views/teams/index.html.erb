@@ -4,8 +4,6 @@
   <tr>
     <th>Name</th>
     <th>Players</th>
-    <th>Home Wins</th>
-    <th></th>
   </tr>
 
 <% @teams.each do |team| %>
@@ -14,11 +12,6 @@
 		<td><% team.players.each do |x| %>
 			<%= x.name  %><br />
 		<% end %>
-		</td>
-			<% Game.all.each do |game| %>
-		<td><%= game.home_wins(game) %>
-		<% end %>
-		</td>
     <td><%= link_to 'Show', team %></td>
     <td><%= link_to 'Edit', edit_team_path(team) %></td>
     <td><%= link_to 'Destroy', team, confirm: 'Are you sure?', method: :delete %></td>
