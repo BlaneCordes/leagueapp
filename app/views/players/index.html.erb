@@ -4,15 +4,22 @@
   <tr>
     <th>Name</th>
     <th>Team</th>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th>Avg Points</th>
+		<th>Avg Assists</th>
+    <th>Avg Rebounds</th>
+    <th>Avg Steals</th>
+		<th>Avg Blocks</th>
   </tr>
 
 <% @players.each do |player| %>
   <tr>
     <td><%= player.name %></td>
     <td><%= player.team.name %></td>
+		<td><%= player.boxscores.average('points') %></td>
+		<td><%= player.boxscores.average('assists') %></td>
+		<td><%= player.boxscores.average('rebounds') %></td>
+		<td><%= player.boxscores.average('steals') %></td>
+		<td><%= player.boxscores.average('blocks') %></td>
     <td><%= link_to 'Show', player %></td>
     <td><%= link_to 'Edit', edit_player_path(player) %></td>
     <td><%= link_to 'Destroy', player, confirm: 'Are you sure?', method: :delete %></td>
