@@ -11,8 +11,6 @@
     </div>
   <% end %>
 
-<% 10.times do %>
-
   <div class="field">
     <%= f.label :game_id %><br />
     <%= f.number_field :game_id %>
@@ -61,9 +59,8 @@
     <%= f.label :threepointmade %><br />
     <%= f.text_field :threepointmade %>
   </div>
-<% end %>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+	<div class="actions">
+	   <%= f.submit %>
+	 </div>
+	<% end %>
 

@@ -26,7 +26,6 @@ class BoxscoresController < ApplicationController
   def new
        @boxscore = Boxscore.new
     end
-   
 
     respond_to do |format|
       format.html # new.html.erb
