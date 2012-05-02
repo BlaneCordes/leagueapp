@@ -6,6 +6,7 @@
     <th>Away team</th>
     <th>Home Score</th>
     <th>Away Score</th>
+		<th>Game Date</th>
   </tr>
 
 <% @games.each do |game| %>
@@ -14,6 +15,7 @@
     <td><%= game.away_team.name %></td>
     <td><%= game.home_score %></td>
     <td><%= game.away_score %></td>
+		<td><%= game.game_date %></td>
     <td><%= link_to 'Show', game %></td>
     <td><%= link_to 'Edit', edit_game_path(game) %></td>
     <td><%= link_to 'Destroy', game, confirm: 'Are you sure?', method: :delete %></td>

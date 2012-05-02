@@ -24,8 +24,7 @@ class BoxscoresController < ApplicationController
   # GET /boxscores/new
   # GET /boxscores/new.json
   def new
-       @boxscore = Boxscore.new
-    end
+    @boxscore = Boxscore.new
 
     respond_to do |format|
       format.html # new.html.erb
@@ -81,3 +80,4 @@ class BoxscoresController < ApplicationController
       format.json { head :no_content }
     end
   end
+end

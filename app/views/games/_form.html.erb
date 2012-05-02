@@ -19,7 +19,6 @@
     <%= f.label :away_team_id %><br />
     <%= f.select :away_team_id, Team.all.map {|t| [t.name, t.id]} %>
   </div>
-
   <div class="field">
     <%= f.label :home_score %><br />
     <%= f.number_field :home_score %>
@@ -28,7 +27,9 @@
     <%= f.label :away_score %><br />
     <%= f.number_field :away_score %>
   </div>
-
+  <div class="field">
+    <%= f.date_select :game_date %>
+  </div>
 
   <div class="actions">
     <%= f.submit %>
