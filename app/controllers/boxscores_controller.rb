@@ -40,7 +40,8 @@ class BoxscoresController < ApplicationController
   # POST /boxscores
   # POST /boxscores.json
   def create
-    @boxscore = Boxscore.new(params[:boxscore])
+    raise params[:boxscores].inspect
+    @boxscore = Boxscore.new(params[:boxscores])
 
     respond_to do |format|
       if @boxscore.save
