@@ -19,7 +19,7 @@
 <% @boxscores.each do |boxscore| %>
   <tr>
     <td><%= boxscore.game_id %></td>
-    <td><%= boxscore.player_id %></td>
+    <td><%= boxscore.player_name(boxscore.player_id) %></td>
     <td><%= boxscore.points %></td>
     <td><%= boxscore.rebounds %></td>
     <td><%= boxscore.assists %></td>
