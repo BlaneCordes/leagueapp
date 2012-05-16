@@ -1,8 +1,11 @@
 class BoxscoresController < ApplicationController
+  
+  before_filter :get_game
+  
   # GET /boxscores
   # GET /boxscores.json
   def index
-    @boxscores = Boxscore.all
+    @boxscores = @game.boxscores
 
     respond_to do |format|
       format.html # index.html.erb
@@ -13,7 +16,7 @@ class BoxscoresController < ApplicationController
   # GET /boxscores/1
   # GET /boxscores/1.json
   def show
-    @boxscore = Boxscore.find(params[:id])
+    @boxscore = @game.boxscores.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -24,7 +27,8 @@ class BoxscoresController < ApplicationController
   # GET /boxscores/new
   # GET /boxscores/new.json
   def new
-    @boxscore = Boxscore.new
+    @game = Game.find(params[:game_id])
+    @boxscore = @game.boxscores.build
 
     respond_to do |format|
       format.html # new.html.erb
@@ -34,15 +38,13 @@ class BoxscoresController < ApplicationController
 
   # GET /boxscores/1/edit
   def edit
-    @boxscore = Boxscore.find(params[:id])
+    @boxscore = @game.boxscores.find(params[:id])
   end
 
   # POST /boxscores
   # POST /boxscores.json
   def create
-    params[:boxscores].each do |k, bs|
-      @boxscore = Boxscore.new(bs)
-    end
+    @boxscore = @game.boxscores.build(params[:id])
 
     respond_to do |format|
       if @boxscore.save
@@ -58,7 +60,7 @@ class BoxscoresController < ApplicationController
   # PUT /boxscores/1
   # PUT /boxscores/1.json
   def update
-    @boxscore = Boxscore.find(params[:id])
+    @boxscore = @game.boxscores.find(params[:id])
 
     respond_to do |format|
       if @boxscore.update_attributes(params[:boxscore])
@@ -74,12 +76,17 @@ class BoxscoresController < ApplicationController
   # DELETE /boxscores/1
   # DELETE /boxscores/1.json
   def destroy
-    @boxscore = Boxscore.find(params[:id])
+    @boxscore = @game.boxscores.find(params[:id])
     @boxscore.destroy
 
     respond_to do |format|
       format.html { redirect_to boxscores_url }
       format.json { head :no_content }
     end
+  end
+  
+  private
+  def get_game
+    @game = Game.find(params[:game_id])
   end
 end

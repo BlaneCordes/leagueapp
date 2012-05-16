@@ -4,7 +4,7 @@ class Game < ActiveRecord::Base
   validates :home_score, :presence => true
   validates :away_score, :presence => true
   
-  has_one :boxscore
+  has_many :boxscores
 
   belongs_to :home_team, :class_name => Team
   belongs_to :away_team, :class_name => Team

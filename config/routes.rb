@@ -1,8 +1,8 @@
 Leagueapp::Application.routes.draw do
-  
-  resources :boxscores
 
-  resources :games
+  resources :games do
+    resources :boxscores
+  end
 
   resources :teams
 

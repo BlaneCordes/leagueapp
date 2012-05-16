@@ -31,12 +31,12 @@
     <td><%= boxscore.threepointattempted %></td>
     <td><%= boxscore.threepointmade %></td>
     <td><%= link_to 'Show', boxscore %></td>
-    <td><%= link_to 'Edit', edit_boxscore_path(boxscore) %></td>
-    <td><%= link_to 'Destroy', boxscore, confirm: 'Are you sure?', method: :delete %></td>
+    <td><%= link_to 'Edit', edit_game_boxscore_path(@game, boxscore) %></td>
+    <td><%= link_to 'Destroy', [@game, boxscore], confirm: 'Are you sure?', method: :delete %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Boxscore', new_boxscore_path %>
+<%= link_to 'New Boxscore', new_game_boxscore_path %>
