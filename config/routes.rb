@@ -8,7 +8,7 @@ Leagueapp::Application.routes.draw do
 
   resources :players
   
-  root :to => 'games#index'
+  root :to => 'teams#index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

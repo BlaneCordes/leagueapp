@@ -1,4 +1,5 @@
-<h1>Listing boxscores</h1>
+<h1>Boxscores</h1>
+
 
 <table>
   <tr>
@@ -30,13 +31,15 @@
     <td><%= boxscore.fgmade %></td>
     <td><%= boxscore.threepointattempted %></td>
     <td><%= boxscore.threepointmade %></td>
-    <td><%= link_to 'Show', boxscore %></td>
+    <td><%= link_to 'Show', [@game, boxscore] %></td>
     <td><%= link_to 'Edit', edit_game_boxscore_path(@game, boxscore) %></td>
     <td><%= link_to 'Destroy', [@game, boxscore], confirm: 'Are you sure?', method: :delete %></td>
   </tr>
 <% end %>
 </table>
 
+
 <br />
 
-<%= link_to 'New Boxscore', new_game_boxscore_path %>
+<%= link_to 'New Boxscore', new_game_boxscore_path(@game) %>
+

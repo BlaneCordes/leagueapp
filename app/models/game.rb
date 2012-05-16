@@ -5,6 +5,8 @@ class Game < ActiveRecord::Base
   validates :away_score, :presence => true
   
   has_many :boxscores
+  
+  accepts_nested_attributes_for :boxscores, :allow_destroy => true
 
   belongs_to :home_team, :class_name => Team
   belongs_to :away_team, :class_name => Team

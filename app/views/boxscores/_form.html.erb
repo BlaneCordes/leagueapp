@@ -1,7 +1,7 @@
-<%= form_for([@boxscore]) do |x| %>
-	<% 2.times do |i| %>
-		<%= fields_for 'boxscores', Boxscore.new, :index => i do |f| %>
-		  <div class="field">
+<%= form_for @boxscore do |f| %>
+	<% f.fields_for :boxscores do |f| %>
+		
+		<div class="field">
 		    <%= f.label :game_id %><br />
 		    <%= f.number_field :game_id %>
 		  </div>
@@ -48,11 +48,10 @@
 		  <div class="field">
 		    <%= f.label :threepointmade %><br />
 		    <%= f.text_field :threepointmade %>
-		  </div>
+		  </div>		
 		<% end %>
-	<% end %>		
 	<div class="actions">
-		<%= x.submit %>
+		<%= f.submit %>
 	</div>
 <% end %>
 
