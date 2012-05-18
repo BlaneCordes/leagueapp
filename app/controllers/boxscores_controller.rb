@@ -44,11 +44,11 @@ class BoxscoresController < ApplicationController
   # POST /boxscores
   # POST /boxscores.json
   def create
-    @boxscore = @game.boxscores.build(params[:id])
+    @boxscore = @game.boxscores.build(params[:boxscore])
 
     respond_to do |format|
       if @boxscore.save
-        format.html { redirect_to @boxscore, notice: 'Boxscore was successfully created.' }
+        format.html { redirect_to game_boxscores_path(@game_id), notice: 'Boxscore was successfully created.' }
         format.json { render json: @boxscore, status: :created, location: @boxscore }
       else
         format.html { render action: "new" }
@@ -61,11 +61,12 @@ class BoxscoresController < ApplicationController
   # PUT /boxscores/1.json
   def update
     @boxscore = @game.boxscores.find(params[:id])
+    
 
     respond_to do |format|
       if @boxscore.update_attributes(params[:boxscore])
-        format.html { redirect_to @boxscore, notice: 'Boxscore was successfully updated.' }
-        format.json { head :no_content }
+        format.html { redirect_to game_boxscores_url(@game), notice: 'Boxscore was successfully updated.' }
+        format.json { head :ok }
       else
         format.html { render action: "edit" }
         format.json { render json: @boxscore.errors, status: :unprocessable_entity }
@@ -80,7 +81,7 @@ class BoxscoresController < ApplicationController
     @boxscore.destroy
 
     respond_to do |format|
-      format.html { redirect_to boxscores_url }
+      format.html { redirect_to @game }
       format.json { head :no_content }
     end
   end
