@@ -60,7 +60,7 @@ class BoxscoresController < ApplicationController
   # PUT /boxscores/1
   # PUT /boxscores/1.json
   def update
-    @boxscore = @game.boxscores.find(params[:id])
+    @boxscore = @game.boxscores.find(params[: id])
     
 
     respond_to do |format|
