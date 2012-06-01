@@ -1,8 +1,7 @@
 class Team < ActiveRecord::Base
   attr_accessible :name, :team_id
   
-  has_many :players 
-  has_many :games
+  has_many :players
   has_many :boxscores, :through => :games
   
   has_many :home_games, :class_name => Game, :foreign_key => :home_team_id
@@ -19,6 +18,10 @@ class Team < ActiveRecord::Base
     [self.away_games, self.home_games].flatten.select do |g|
       g.loser?(self)
     end
+  end
+  
+  def games
+    self.home_games + self.away_games
   end
 
 

@@ -20,6 +20,7 @@
 		<td><%= player.boxscores.average('rebounds') %></td>
 		<td><%= player.boxscores.average('steals') %></td>
 		<td><%= player.boxscores.average('blocks') %></td>
+		<td><%= link_to 'Games', player.games %></td>
     <td><%= link_to 'Show', player %></td>
     <td><%= link_to 'Edit', edit_player_path(player) %></td>
     <td><%= link_to 'Destroy', player, confirm: 'Are you sure?', method: :delete %></td>
